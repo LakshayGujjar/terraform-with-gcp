@@ -1,5 +1,4 @@
 
-#google provider
 provider "google" {
 	project = "tb-shared-service"
 	region = "us-central1"
