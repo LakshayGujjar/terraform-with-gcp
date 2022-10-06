@@ -1,0 +1,4 @@
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: 'gcloud'
+  timeout: 240s
+  args: ['compute','scp','provider.tf','bitbucket-cicd:~/home/lakshay_kumar/pull_code']
