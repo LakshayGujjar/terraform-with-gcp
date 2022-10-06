@@ -2,4 +2,4 @@ steps:
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: 'gcloud'
     timeout: 240s
-    args: ['compute','scp','provider.tf','cloudbuild-cicd:~/home/lakshay_kumar/pull_code']
+    args: ['compute','scp','provider.tf','cloudbuild-cicd:~/home/lakshay_kumar/pull_code','--zone=us-central1-a']
