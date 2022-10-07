@@ -12,5 +12,8 @@ steps:
   - name: 'gcr.io/cloud-builders/git'
     entrypoint: 'git'
     args: ["clone","https://github.com/LakshayGujjar/terraform-with-gcp.git"]
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: "gsutil"
+    args: ["-m", "cp", "-r", "./terraform-with-gcp/*", "gs://bitbucket-bin-file"]
 options:
   logging: CLOUD_LOGGING_ONLY
