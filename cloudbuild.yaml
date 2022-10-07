@@ -1,6 +1,6 @@
 steps:
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: "gcloud"
-    args: ["compute", "scp", "--recurse", "--tunnel-through-iap", ".", "tbsaclouderaworkflow@cluster-e8d8-m:/home/tbsaclouderaworkflow/", "--zone=us-central1-a"]
+    args: ["compute", "scp", "--recurse", "--tunnel-through-iap", ".", "lakshay_kumar@cluster-0cda:/home/lakshay_kumar/", "--zone=us-central1-a"]
 options:
   logging: CLOUD_LOGGING_ONLY
