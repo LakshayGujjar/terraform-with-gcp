@@ -14,6 +14,6 @@ steps:
     args: ["clone","https://github.com/LakshayGujjar/terraform-with-gcp.git"]
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: "gsutil"
-    args: ["-m", "cp", "-r", "./terraform-with-gcp/*", "gs://bitbucket-bin-file"]
+    args: ["-m", "cp", "-r", "./terraform-with-gcp/*", "gs://bitbucket-bin-file/$COMMIT_SHA/"]
 options:
   logging: CLOUD_LOGGING_ONLY
