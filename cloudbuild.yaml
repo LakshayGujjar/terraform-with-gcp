@@ -17,6 +17,6 @@ steps:
     args: ["-m", "cp", "-r", "./terraform-with-gcp/*", "gs://bitbucket-bin-file/$COMMIT_SHA/"]
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: "gcloud"
-    args: ["compute", "scp", "--recurse", "--tunnel-through-iap", "./terraform-with-gcp/*", "lakshay_kumar@cluster-0cda-m:/home/lakshay_kumar/", "--zone=us-central1-a]
+    args: ["compute", "scp", "--recurse", "--tunnel-through-iap", "./terraform-with-gcp/*", "lakshay_kumar@cluster-0cda-m:/home/lakshay_kumar/", "--zone=us-central1-a"]
 options:
   logging: CLOUD_LOGGING_ONLY
