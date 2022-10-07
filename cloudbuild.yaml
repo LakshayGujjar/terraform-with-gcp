@@ -1,5 +1,6 @@
 steps:
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: 'gcloud'
-    timeout: 240s
-    args: ['compute','scp','provider.tf','cloudbuild-cicd:~/home/lakshay_kumar/pull_code','--zone=us-central1-a']
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: "gcloud"
+    args: ["compute", "scp", "--recurse", "--tunnel-through-iap", ".", "tbsaclouderaworkflow@cluster-e8d8-m:/home/tbsaclouderaworkflow/", "--zone=us-central1-a"]
+options:
+  logging: CLOUD_LOGGING_ONLY
