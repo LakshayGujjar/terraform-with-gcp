@@ -4,9 +4,14 @@ steps:
     entrypoint: 'git'
     args: ["clone","https://github.com/LakshayGujjar/terraform-with-gcp.git"]
   
-  #step 2 : transfering files to dataproc master node
+  #step 2 : overwriting the dir
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: "gcloud"
-    args: ["compute", "scp", "--recurse", "--tunnel-through-iap", "./terraform-with-gcp/", "lakshay_kumar@cluster-0cda-m:/home/lakshay_kumar/", "--zone=us-central1-a"]
+    args: ['compute','ssh','--tunnel-through-iap','lakshay_kumar@cluster-0cda-m','--command="rm -r /home/lakshay_kumar/terraform-with-gcp/"','--zone=us-central1-a'] 
+  #step 2 : transfering files to dataproc master node
+  # - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+  #   entrypoint: "gcloud"
+  #   args: ["compute", "scp", "--recurse", "--tunnel-through-iap", "./terraform-with-gcp/", "lakshay_kumar@cluster-0cda-m:/home/lakshay_kumar/", "--zone=us-central1-a"]
+  
 options:
   logging: CLOUD_LOGGING_ONLY
