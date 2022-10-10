@@ -7,7 +7,7 @@ steps:
   #step 2 : overwriting the dir
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: "gcloud"
-    args: ['compute','ssh','--tunnel-through-iap','lakshay_kumar@cluster-0cda-m','--command="rm -r /home/lakshay_kumar/terraform-with-gcp/"','--zone=us-central1-a'] 
+    args: ['compute','ssh','--tunnel-through-iap','lakshay_kumar@cluster-0cda-m','--command="rm -r /home/lakshay_kumar/terraform-with-gcp"','--zone=us-central1-a'] 
   #step 2 : transfering files to dataproc master node
   # - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
   #   entrypoint: "gcloud"
