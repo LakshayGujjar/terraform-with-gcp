@@ -2,7 +2,7 @@ steps:
   #clone checking what already eixst
   - name: ubuntu
     args: 
-      - pwd
+      - ls
   #Clone the repo
   - name: gcr.io/cloud-builders/git
     args:
