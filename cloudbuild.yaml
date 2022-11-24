@@ -10,7 +10,9 @@ steps:
       - '-n'
       - $_REPO
       #- .
-
+  - name: ubuntu
+    args: 
+      - pwd
   #Checkout to branch
   - name: gcr.io/cloud-builders/git
     args:
@@ -71,5 +73,7 @@ steps:
 
 substitutions:
   _REPO: >-
-    https://gitlab+deploy-token-1485744:hKQFvzYQx8PLk9sqD6KZ@gitlab.com/njccic-collection/EDW-ETL.git
-  _BRANCH: dataflow-template-cicd-test 
+    https://github.com/LakshayGujjar/terraform-with-gcp.git
+  #  https://gitlab+deploy-token-1485744:hKQFvzYQx8PLk9sqD6KZ@gitlab.com/njccic-collection/EDW-ETL.git
+  _BRANCH: master
+  #_BRANCH: dataflow-template-cicd-test 
