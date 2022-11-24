@@ -9,7 +9,7 @@ steps:
       - clone
       - '-n'
       - $_REPO
-      - .
+      #- .
   - name: ubuntu
     args: 
       - ls
