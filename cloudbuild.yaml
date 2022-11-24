@@ -9,10 +9,10 @@ steps:
       - clone
       - '-n'
       - $_REPO
-      #- .
+      - .
   - name: ubuntu
     args: 
-      - pwd
+      - ls
   #Checkout to branch
   - name: gcr.io/cloud-builders/git
     args:
@@ -67,7 +67,7 @@ steps:
                 continue
             fi
             echo "Template location will be gs://dummy_df_template/Template/${p:0:-3}_template"
-            python3 "$pipeline" --template_location "gs://dummy_df_template/Template/${p:0:-3}_template"
+            python3 "$pipeline" --template_location "gs://$_BUCKET/Template/${p:0:-3}_template"
         done < "$filename"
     dir: transformation
 
@@ -77,3 +77,4 @@ substitutions:
   #  https://gitlab+deploy-token-1485744:hKQFvzYQx8PLk9sqD6KZ@gitlab.com/njccic-collection/EDW-ETL.git
   _BRANCH: master
   #_BRANCH: dataflow-template-cicd-test 
+  _BUCKET: temp_store_lohith_cloudbuild
