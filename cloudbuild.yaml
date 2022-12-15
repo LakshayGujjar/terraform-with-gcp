@@ -68,7 +68,7 @@ steps:
             fi
             echo "Template location will be gs://dummy_df_template/Template/${p:0:-3}_template"
             python3 "$pipeline" --template_location "gs://$_BUCKET/Template/${p:0:-3}_template"
-        done < "$filename"
+        done < $filename"
     dir: transformation
 
 substitutions:
