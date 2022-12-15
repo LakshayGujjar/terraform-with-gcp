@@ -1,5 +1,5 @@
 steps:
-  #clone checking what already eixst
+  #clone checking what already eixsting
   - name: ubuntu
     args: 
       - ls
