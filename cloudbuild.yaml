@@ -17,7 +17,7 @@ steps:
   - name: gcr.io/cloud-builders/git
     args:
       - checkout
-      - _BRANCH
+      - $_BRANCH
   #Install requirements
   - name: 'python:3.8-slim'
     entrypoint: pip
